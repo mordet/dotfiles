@@ -9,9 +9,11 @@ set showmatch
 set list
 set listchars=tab:>-,trail:~,extends:>,precedes:<
 
-vmap <C-c> "+y
-vmap <C-v> c<ESC>"+p
-imap <C-v> <ESC>"+pa
+" Remap copy and paste to OS clipboard
+" if not working, you may have to install vim-gtk
+	vnoremap <C-c> "+y
+	map <C-v> c<ESC>"+P
+	imap <C-v> <ESC>"+pa
 
 au FileType gitcommit set cc=72
 au FileType yaml set foldmethod=indent
@@ -25,7 +27,9 @@ au FileType yaml set foldmethod=indent
 	set encoding=utf-8
 
 " Enable relative line numbers to be displayed instead of absolute ones:
-	set number relativenumber
+" Enable if you have no issues with slow relativenumber drawing or already have
+" a patch covering that issue
+"	set number relativenumber
 
 " Autocompletion:
 	set wildmode=longest,list,full
