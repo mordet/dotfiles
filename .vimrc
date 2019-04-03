@@ -25,11 +25,13 @@ au FileType yaml set foldmethod=indent
 	filetype plugin on
 	syntax on
 	set encoding=utf-8
+	set smartindent
+	set autoindent
 
 " Enable relative line numbers to be displayed instead of absolute ones:
 " Enable if you have no issues with slow relativenumber drawing or already have
 " a patch covering that issue
-"	set number relativenumber
+	set number relativenumber
 
 " Autocompletion:
 	set wildmode=longest,list,full
