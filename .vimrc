@@ -12,8 +12,8 @@ set listchars=tab:>-,trail:~,extends:>,precedes:<
 " Remap copy and paste to OS clipboard
 " if not working, you may have to install vim-gtk
 	vnoremap <C-c> "+y
-	map <C-v> c<ESC>"+P
-	imap <C-v> <ESC>"+pa
+"	map <C-v> c<ESC>"+P
+"	imap <C-v> <ESC>"+pa
 
 au FileType gitcommit set cc=72
 au FileType yaml set foldmethod=indent
@@ -48,5 +48,20 @@ au FileType yaml set foldmethod=indent
 	map <C-k> <C-w>k
 	map <C-l> <C-w>l
 
+" Exist insert mode using jj combination
+	inoremap jj <Esc>
+
 " Automatically deletes all trailing whitespaces on save:
 	autocmd BufWritePre * %s/\s\+$//e
+
+" Set light background mode
+	set background=light
+
+" Airline plugin
+" install with
+"	git clone https://github.com/vim-airline/vim-airline ~/.vim/pack/dist/start/vim-airline
+"	git clone https://github.com/vim-airline/vim-airline-themes ~/.vim/pack/dist/start/vim-airline-themes
+	:let g:airline_theme='sol'
+" Powerline font may be needed to install via
+"	sudo apt-get install fonts-powerline
+	:let g:airline_powerline_fonts = 1
