@@ -54,7 +54,7 @@ map <C-l> <C-w>l
 inoremap jj <Esc>
 
 " Automatically deletes all trailing whitespaces on save:
-autocmd BufWrtePre * %s/\s\+$//e
+autocmd BufWritePre * %s/\s\+$//e
 
 " Set light background mode
 set background=light
