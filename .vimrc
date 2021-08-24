@@ -1,6 +1,5 @@
 set number
 
-set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
 set mouse=a
 set incsearch
 set hlsearch
@@ -8,6 +7,13 @@ set showmatch
 
 set list
 set listchars=tab:>-,trail:~,extends:>,precedes:<
+
+" https://habr.com/ru/post/98393/
+set keymap=russian-jcukenwin
+set iminsert=0
+set imsearch=0
+highlight lCursor guifg=NONE guibg=Cyan
+set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
 
 " Remap copy and paste to OS clipboard
 " if not working, you may have to install vim-gtk
@@ -34,6 +40,7 @@ set expandtab       " insert spaces instead of a tabs
 " Enable if you have no issues with slow relativenumber drawing or already have
 " a patch covering that issue
 set number relativenumber
+:set nu rnu
 
 " Autocompletion:
 set wildmode=longest,list,full
@@ -52,6 +59,7 @@ map <C-l> <C-w>l
 
 " Exist insert mode using jj combination
 inoremap jj <Esc>
+inoremap оо <Esc>
 
 " Automatically deletes all trailing whitespaces on save:
 autocmd BufWritePre * %s/\s\+$//e
@@ -63,7 +71,8 @@ set background=light
 " install with
 "git clone https://github.com/vim-airline/vim-airline ~/.vim/pack/dist/start/vim-airline
 "git clone https://github.com/vim-airline/vim-airline-themes ~/.vim/pack/dist/start/vim-airline-themes
-:let g:airline_theme='sol'
+:let g:airline_theme='molokai'
+":let g:airline_theme='sol'
 " Powerline font may be needed to install via
 "sudo apt-get install fonts-powerline
 :let g:airline_powerline_fonts = 1
